@@ -1,0 +1,155 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+    --primary: 340 82% 52%; /* Rosa principale più vibrante */
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    --accent: 330 70% 95%; /* Rosa chiaro per accenti */
+    --accent-foreground: 330 70% 30%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 355.7 100% 97.3%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 340 82% 52%; /* Rosa per focus rings */
+    --radius: 0.75rem;
+
+    --beige: 39 52% 90%; /* Beige personalizzato */
+    --rose-50: 350 100% 98%; /* Rosa molto chiaro */
+    --pink-50: 345 100% 98%; /* Altro rosa molto chiaro */
+  }
+
+  .dark {
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 340 82% 60%; /* Rosa più chiaro per dark mode */
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --accent: 330 70% 20%; /* Rosa scuro per accenti dark */
+    --accent-foreground: 330 70% 90%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 340 82% 60%; /* Rosa per focus rings dark */
+    --beige: 39 30% 20%; 
+    --rose-50: 350 30% 15%;
+    --pink-50: 345 30% 15%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
+  }
+  h1,h2,h3,h4,h5,h6 {
+    @apply font-semibold;
+  }
+}
+
+/* Stili per React Big Calendar */
+.rbc-calendar {
+  @apply rounded-lg shadow-lg border border-pink-200 bg-white;
+}
+
+.rbc-toolbar {
+  @apply bg-pink-50 p-3 rounded-t-lg border-b border-pink-200;
+}
+
+.rbc-toolbar button {
+  @apply text-pink-600 hover:bg-pink-100 hover:text-pink-700 focus:bg-pink-200 disabled:text-pink-300;
+  @apply px-3 py-1.5 rounded-md text-sm transition-colors;
+}
+.rbc-toolbar button.rbc-active {
+   @apply bg-primary text-primary-foreground hover:bg-primary/90;
+}
+
+.rbc-toolbar .rbc-toolbar-label {
+  @apply text-xl font-semibold text-pink-700;
+}
+
+.rbc-header {
+  @apply text-center py-2 px-1 border-b border-r border-pink-100 bg-pink-50/50 text-sm font-medium text-pink-600;
+}
+.rbc-header:last-child {
+  @apply border-r-0;
+}
+
+.rbc-day-bg {
+  @apply border-l border-pink-100;
+}
+.rbc-day-bg:first-child {
+  @apply border-l-0;
+}
+
+.rbc-month-row {
+  @apply border-t border-pink-100;
+}
+
+.rbc-time-gutter .rbc-timeslot-group {
+   @apply border-t border-pink-100;
+}
+.rbc-timeslot-group {
+    min-height: 60px; /* Increased height for better clickability */
+}
+
+.rbc-time-header-content .rbc-header {
+  @apply border-b-0; /* Remove bottom border for time header cells */
+}
+
+.rbc-time-content > * + * > * {
+  @apply border-l border-pink-100; /* Vertical lines for day columns */
+}
+
+.rbc-time-slot {
+  @apply border-t border-pink-100; /* Horizontal lines for time slots */
+}
+
+.rbc-event {
+  @apply p-1 text-xs rounded-md shadow-sm;
+  /* Default event colors are set by eventPropGetter in the component */
+}
+
+.rbc-event-label {
+  @apply font-medium;
+}
+
+.rbc-slot-selectable .rbc-time-slot {
+  @apply cursor-pointer hover:bg-pink-50/30 transition-colors;
+}
+
+.rbc-current-time-indicator {
+  @apply bg-primary h-0.5;
+}
+
+.rbc-off-range-bg {
+  @apply bg-slate-50/50;
+}
+.rbc-today {
+  @apply bg-rose-50;
+}
+
+  
